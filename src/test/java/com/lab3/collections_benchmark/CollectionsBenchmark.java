@@ -18,6 +18,16 @@ public class CollectionsBenchmark {
         return System.nanoTime() - start;
     }
 
+    public static long measureInsertArrayList() {
+        ArrayList<Integer> list = new ArrayList<>();
+        long start = System.nanoTime();
+        for (int i = 0; i < OPERATIONS_COUNT; i++) {
+            int index = RANDOM.nextInt(list.size() + 1);
+            list.add(index, i);
+        }
+        return System.nanoTime() - start;
+    }
+    
     public static long measureGetArrayList() {
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < OPERATIONS_COUNT; i++) {
@@ -54,6 +64,16 @@ public class CollectionsBenchmark {
         return System.nanoTime() - start;
     }
 
+    public static long measureInsertLinkedList() {
+        LinkedList<Integer> list = new LinkedList<>();
+        long start = System.nanoTime();
+        for (int i = 0; i < OPERATIONS_COUNT; i++) {
+            int index = RANDOM.nextInt(list.size() + 1);
+            list.add(index, i);
+        }
+        return System.nanoTime() - start;
+    }
+    
     public static long measureGetLinkedList() {
         LinkedList<Integer> list = new LinkedList<>();
         for (int i = 0; i < OPERATIONS_COUNT; i++) list.add(i);
