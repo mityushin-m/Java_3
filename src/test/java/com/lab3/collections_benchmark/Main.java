@@ -1,6 +1,16 @@
 package com.lab3.collections_benchmark;
 
+/**
+ * Запускает измерение производительности коллекций и выводит таблицу результатов.
+ * 
+ * @author Митюшин Максим
+ */
 public class Main {
+	
+	/**
+     * Точка входа в программу.
+     * @param args аргументы командной строки (не используются)
+     */
 	public static void main(String[] args) {
 		System.out.println("Сравнение производительности ArrayList и LinkedList");
         System.out.println("Количество операций: " + CollectionsBenchmark.OPERATIONS_COUNT);
@@ -24,6 +34,12 @@ public class Main {
         System.out.println("---------------------------------------------------------------------");
     }
 	
+	/**
+     * Выводит одну строку таблицы.
+     * @param operation название операции
+     * @param collection название коллекции
+     * @param timeNs время в наносекундах
+     */
 	private static void printResult(String op, String col, long timeNs) {
         long timeMs = timeNs / 1_000_000;
         System.out.printf("%-23s | %-12s | %-14d | %-15d%n", op, col, timeNs, timeMs);
